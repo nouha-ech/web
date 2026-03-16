@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Nohaila Echchnaoui — Développeuse Full-Stack & Étudiante en Cybersécurité" />
+  <title>Portfolio | Nohaila Ech.chnaoui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="nav-brand">Nohaila<span>.</span></div>
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Menu mobile" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ACCUEIL  -->
+  <section id="home" class="home">
+    <div class="home-content">
+      <img
+        src="nohaila.webp"
+        alt="Photo de profil de Nohaila Echchnaoui"
+        class="photo"
+         />
+      <h1>Nohaila Ech.chnaoui</h1>
+      <p class="home-subtitle"> Future ingénieur en Cybersécurité &amp; Confiance Numérique</p>
+      <p class="home-desc">
+        Basée à Casablanca, passionnée par la création d'applications web modernes et évolutives.
+        Étudiante à l'ENSET depuis 2025 dans la filière Cybersécurité et Confiance Numérique.
+      </p>
+      <div class="buttons">
+        <a href="echchnaouii.pdf" download class="btn btn-primary">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 12l-4-4h2.5V4h3v4H12L8 12zM2 14h12v1.5H2z"/></svg>
+          Télécharger CV
+        </a>
+        <a href="https://www.linkedin.com/in/nohaila-ech-chnaoui/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Profil LinkedIn (nouvel onglet)">
+          LinkedIn
+        </a>
+        <a href="https://github.com/nouha-ech" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Profil GitHub (nouvel onglet)">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!--  À PROPOS  -->
+  <section id="about">
+    <h2 class="section-title">À propos de moi</h2>
+
+    <div class="about-container">
+      <div class="about-text">
+        <h3>Qui suis-je</h3>
+        <p>
+          Je suis Nohaila, développeuse full-stack avec de l'expérience dans les technologies backend et frontend.
+          Je travaille avec PHP, Java, Node.js ainsi que des frameworks modernes comme React et Next.js pour créer
+          des applications web performantes.
+        </p>
+
+        <h3>Parcours académique</h3>
+        <p>
+          Depuis 2025, je poursuis mes études à l'ENSET dans la filière Cybersécurité et Confiance Numérique
+          afin de renforcer mes compétences en sécurité des systèmes,infrastructures, développement sécurisé et protection des données.
+        </p>
+
+        <h3>Mes objectifs</h3>
+        <p>
+          Je souhaite continuer à développer mes compétences en développement web et en cybersécurité tout en
+          explorant l'intelligence artificielle et d'autres technologies innovantes.
+        </p>
+      </div>
+
+      <img
+        src="about.webp"
+        alt="Illustration de présentation de Nohaila Echchnaoui"
+        class="about-img"
+        onerror="this.style.display='none'"
+      />
+    </div>
+  </section>
+
+  <!-- EXPÉRIENCE -->
+  <section id="experience">
+    <h2 class="section-title">Expérience</h2>
+
+    <div class="timeline">
+
+      <div class="exp reveal">
+        <span class="exp-tag">Formation</span>
+        <h3>Cycle ingénieur en Cybersécurité & Confiance numérique </h3>
+        <p class="exp-org"> ENSET – Mohammedia</p>
+        <p class="exp-date">2025 – En cours</p>
+      </div>
+
+            <div class="exp reveal">
+        <span class="exp-tag">Stage</span>
+        <h3>Stage full-stack Developer – IBM A&amp;T</h3>
+        <p class="exp-org">Casablanca – Aout-Septembre 2025</p>
+        <p>Développement d'un système d'un système de gestion avec Angular js et Springboot.</p>
+      </div>
+
+      <div class="exp reveal">
+        <span class="exp-tag">Formation</span>
+        <h3>BTS Développement des Systèmes d'Information</h3>
+        <p class="exp-org">Centre P-TECH Abderrahmane Ben Ghazala – Casablanca</p>
+        <p class="exp-date">2023 – 2025</p>
+      </div>
+
+      <div class="exp reveal">
+        <span class="exp-tag">Stage</span>
+        <h3>Stage Backend Developer – IBM A&amp;T</h3>
+        <p class="exp-org">Casablanca – Septembre 2024</p>
+        <p>Développement d'un système de réservation de séances de fitness avec Node.js et MySQL.</p>
+      </div>
+
+      <div class="exp reveal">
+        <span class="exp-tag">Freelance</span>
+        <h3>Développeuse Next.js – Arimayi</h3>
+        <p class="exp-org">France (Remote) – 2024</p>
+        <p>Participation au développement de la landing page du site Arimayi.</p>
+      </div>
+
+      <div class="exp reveal">
+        <span class="exp-tag">Stage</span>
+        <h3>Stage Full-Stack Developer – CDMA Solutions</h3>
+        <p class="exp-org">Casablanca – Mai 2025</p>
+        <p>Développement d'une application web pour la gestion des réservations de salles d'événements.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section id="skills">
+    <h2 class="section-title">Compétences</h2>
+
+    <ul class="skills" aria-label="Liste des compétences techniques">
+      <li>C</li>
+      <li>Java</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Linux</li>
+    
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Next.js</li>
+      <li>Node.js</li>
+      <li>PHP</li>
+      <li>Python</li>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+       <li>Ollama</li>
+       <li>SQLite</li>
+       <li>pandas</li>
+       <li>plotly</li>
+       <li>SQLite</li>
+      <li>Git</li>
+      <li>Docker</li>
+    </ul>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projects">
+    <h2 class="section-title">Projets</h2>
+
+    <div class="projects">
+
+
+            <div class="project reveal">
+        <div class="project-icon" aria-hidden="true"></div>
+        <h3>Jnane Yassmine </h3>
+        <p>Système de gestion des réservations pour une salle de fete indéveloppé avec Laravel.</p>
+      </div>
+ 
+      <div class="project reveal">
+        <div class="project-icon" aria-hidden="true"></div>
+        <h3>Arimayi</h3>
+        <p>Landing page développée avec Next.js.</p>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-icon" aria-hidden="true"></div>
+        <h3>SmartLab+</h3>
+        <p>Application full-stack utilisant l'IA pour aider les patients à interpréter leurs résultats d'analyses médicales.</p>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-icon" aria-hidden="true"></div>
+        <h3>n7Acad</h3>
+        <p>Système de gestion des ressource éducative indéveloppé avec streamlit et SQLite.</p>
+      </div>
+      <div class="project reveal">
+        <div class="project-icon" aria-hidden="true"></div>
+        <h3>CAF2025</h3>
+        <p>Tableau de bord d'analyse des résultats des match football caf 2025.</p>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-icon" aria-hidden="true"></div>
+        <h3>EasyDocs</h3>
+        <p>Application IA permettant d'analyser et résumer plusieurs documents.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT-->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-intro">Vous pouvez me contacter directement via ce formulaire.</p>
+
+    <form id="contact-form" novalidate aria-label="Formulaire de contact">
+      <label for="email" class="sr-only">Votre email</label>
+      <input type="email" id="email" name="email" placeholder="Votre email" required />
+
+      <label for="message" class="sr-only">Votre message</label>
+      <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+
+      <button type="submit">Envoyer</button>
+      <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Nohaila Echchnaoui</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
