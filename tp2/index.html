@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Université</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Inscription Université</h1>
+            <p>Créez votre compte étudiant</p>
+        </header>
+
+        <form action="submit.php" method="POST" enctype="multipart/form-data" aria-label="Formulaire d'inscription universitaire">
+            
+    
+            <fieldset>
+                <legend>Informations personnelles</legend>
+                
+                <div class="form-group">
+                    <input type="text" id="nom" name="nom" placeholder=" " required autocomplete="family-name" title="Entrez votre nom de famille" aria-label="Nom de famille">
+                    <label for="nom">Nom *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="prenom" name="prenom" placeholder=" " required autocomplete="given-name" title="Entrez votre prénom" aria-label="Prénom">
+                    <label for="prenom">Prénom *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder=" " required autocomplete="email" title="Entrez votre adresse email valide" aria-label="Adresse email">
+                    <label for="email">Email *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="telephone" name="telephone" placeholder=" " 
+                           pattern="^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$" 
+                           title="Numéro de téléphone français (ex: 06 12 34 56 78)" 
+                           required autocomplete="tel" aria-label="Numéro de téléphone">
+                    <label for="telephone">Téléphone *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="date" id="dateNaissance" name="dateNaissance" required title="Votre date de naissance (vous devez avoir 18 ans)" aria-label="Date de naissance">
+                    <label for="dateNaissance">Date de naissance *</label>
+                    <small id="ageMessage" class="helper-text" aria-live="polite"></small>
+                </div>
+
+                <div class="form-group radio-group">
+                    <div role="radiogroup" aria-labelledby="genre-label">
+                        <span id="genre-label" class="group-label">Genre *</span>
+                        <div class="options">
+                            <label class="radio-label">
+                                <input type="radio" name="genre" value="femme" required title="Sélectionner Femme" aria-label="Femme"> 
+                                Femme
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="genre" value="homme" required title="Sélectionner Homme" aria-label="Homme"> 
+                                Homme
+                            </label>
+                            
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Localisation</legend>
+                
+                <div class="form-group">
+                    <input list="pays-list" id="pays" name="pays" placeholder=" " required autocomplete="country" title="Sélectionnez ou tapez votre pays" aria-label="Pays de résidence">
+                    <label for="pays">Pays *</label>
+                    <datalist id="pays-list">
+                        <option value="France">
+                        <option value="Belgique">
+                        <option value="Suisse">
+                        <option value="Canada">
+                        <option value="Maroc">
+                        <option value="Tunisie">
+                        <option value="Sénégal">
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="ville" name="ville" placeholder=" " required autocomplete="address-level2" title="Entrez votre ville de résidence" aria-label="Ville de résidence">
+                    <label for="ville">Ville *</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Sécurité</legend>
+                
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder=" " 
+                           pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" 
+                           title="Min 8 caractères, 1 majuscule, 1 chiffre requis" 
+                           required autocomplete="new-password" aria-label="Mot de passe">
+                    <label for="password">Mot de passe *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder=" " required autocomplete="new-password" title="Confirmez votre mot de passe" aria-label="Confirmation du mot de passe">
+                    <label for="confirmPassword">Confirmer le mot de passe *</label>
+                    <span id="passwordError" class="error-text" aria-live="assertive"></span>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Profil</legend>
+                
+                <div class="form-group">
+                    <span id="interets-label" class="group-label">Centres d'intérêt</span>
+                    <div class="options checkbox-group" role="group" aria-labelledby="interets-label">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interets[]" value="informatique" title="Intéressé par l'informatique" aria-label="Informatique"> Informatique
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interets[]" value="sciences" title="Intéressé par les sciences" aria-label="Sciences"> Sciences
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interets[]" value="lettres" title="Intéressé par les lettres" aria-label="Lettres"> Lettres
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interets[]" value="sport" title="Intéressé par le sport" aria-label="Sport"> Sport
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="biographie" name="biographie" maxlength="500" placeholder=" " title="Décrivez-vous brièvement (max 500 caractères)" aria-label="Biographie personnelle"></textarea>
+                    <label for="biographie">Biographie</label>
+                    <span class="counter" aria-hidden="true"><span id="charCount">0</span>/500</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo" class="file-label">Photo de profil</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" title="Télécharger une photo de profil (JPG, PNG)" aria-label="Télécharger une photo de profil">
+                </div>
+            </fieldset>
+
+            <fieldset class="cgu-fieldset">
+                <label class="checkbox-label cgu-label">
+                    <input type="checkbox" id="cgu" name="cgu" required title="Vous devez accepter les conditions générales d'utilisation" aria-label="Accepter les conditions générales d'utilisation">
+                    J'accepte les <a href="#" target="_blank" title="Lire les CGU" aria-label="Lire les conditions générales d'utilisation dans un nouvel onglet">conditions générales d'utilisation</a> *
+                </label>
+            </fieldset>
+
+            <button type="submit" aria-label="Valider le formulaire d'inscription">S'inscrire</button>
+            <p class="form-footer">Les champs marqués d'un * sont obligatoires</p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
