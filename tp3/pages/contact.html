@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Voyage Bladi</title>
+  <meta name="description" content="Contactez Bladi Voyage pour planifier votre voyage au Maroc. Devis gratuit, conseils personnalisés.">
+  <meta property="og:title" content="Contactez Bladi Voyage">
+  <meta property="og:description" content="Planifiez votre voyage au Maroc avec nos experts. Devis gratuit.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .success-msg {
+      display:none;
+      background: #d4edda; color: #155724;
+      padding: 16px 20px; border-radius: 6px;
+      border-left: 4px solid #28a745;
+      margin-bottom: 20px; font-weight:600;
+    }
+    .success-msg.show { display:block; }
+    .faq-section { background: var(--cream); }
+    .faq-list { max-width:760px; margin:0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--sand);
+      padding: 6px 0;
+    }
+    .faq-item summary {
+      padding: 18px 0;
+      font-weight:700; font-size:.97rem;
+      color: var(--text-dark);
+      cursor:pointer; list-style:none;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .faq-item summary::after {
+      content:'+'; font-size:1.4rem; color:var(--clay);
+      transition: transform .25s;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p {
+      padding: 0 0 18px 0; font-size:.93rem;
+    }
+    .input-group { position:relative; }
+    .input-group .input-icon {
+      position:absolute; left:14px; top:50%; transform:translateY(-50%);
+      color:var(--text-light); font-size:.9rem; pointer-events:none;
+    }
+    .input-group input, .input-group select {
+      padding-left: 40px;
+    }
+    .textarea-group { position:relative; }
+    .textarea-group .input-icon {
+      position:absolute; left:14px; top:16px;
+      color:var(--text-light); font-size:.9rem; pointer-events:none;
+    }
+    .textarea-group textarea { padding-left:40px; }
+    .required-star { color:var(--clay); }
+  </style>
+</head>
+<body>
+
+<div class="zellige-border"></div>
+
+<nav class="navbar">
+  <div class="wrapper">
+    <a href="../index.html" class="navbar-brand">🌙 Bladi Voyage<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="../index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Galerie</a>
+      <a href="contact.html" class="btn-nav active">Contact</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="mobile-menu">
+    <a href="../index.html"> Accueil</a>
+    <a href="about.html"> À propos</a>
+    <a href="services.html"> Services</a>
+    <a href="gallery.html">Galerie</a>
+    <a href="contact.html"> Contact</a>
+  </div>
+</nav>
+
+<div class="page-heading">
+  <div class="wrapper">
+    <span class="section-tag" style="color:var(--sand);">✦ Parlons voyage ✦</span>
+    <h1>Contactez-nous</h1>
+    <p>Notre équipe vous répond sous 24h pour concevoir votre aventure marocaine</p>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="../index.html">Accueil</a>
+      <span>›</span>
+      <span style="color:var(--sand);">Contact</span>
+    </nav>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="section section-alt">
+  <div class="wrapper">
+    <div class="contact-grid">
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <span class="section-tag">✦ Nous trouver ✦</span>
+        <h2>Venez nous rendre visite</h2>
+        <div class="divider left"></div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fa fa-map-marker-alt"></i></div>
+          <div class="info-content">
+            <h4>Notre Agence</h4>
+            <p>42, Boulevard Zerktouni<br>Casablanca 20100, Maroc</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fa fa-phone"></i></div>
+          <div class="info-content">
+            <h4>Téléphone</h4>
+            <p><a href="tel:+212522123456" style="color:var(--clay);font-weight:700;">+212 522 12 34 56</a><br>
+            <span style="font-size:.85rem;color:var(--text-light);">Lun–Sam · 9h–19h</span></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fa fa-envelope"></i></div>
+          <div class="info-content">
+            <h4>Email</h4>
+            <p><a href="mailto:info@bladivoyage.ma" style="color:var(--clay);font-weight:700;">info@bladivoyage.ma</a><br>
+            <span style="font-size:.85rem;color:var(--text-light);">Réponse sous 24h</span></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fa fa-clock"></i></div>
+          <div class="info-content">
+            <h4>Horaires</h4>
+            <p>Lundi – Vendredi : 9h00 – 19h00<br>
+            Samedi : 9h00 – 14h00<br>
+            <span style="font-size:.85rem;color:var(--text-light);">Dimanche : Fermé</span></p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" aria-label="Facebook Bladi Voyage"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram Bladi Voyage"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp Bladi Voyage"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="TripAdvisor Bladi Voyage"><i class="fa-brands fa-tripadvisor"></i></a>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div>
+        <span class="section-tag">✦ Votre demande ✦</span>
+        <h2>Demande de devis gratuit</h2>
+        <div class="divider left"></div>
+
+        <div class="success-msg" id="successMsg">
+          ✅ Merci ! Votre demande a bien été envoyée. Nous vous contacterons sous 24h.
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom <span class="required-star">*</span></label>
+              <div class="input-group">
+                <i class="fa fa-user input-icon"></i>
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required autocomplete="given-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom <span class="required-star">*</span></label>
+              <div class="input-group">
+                <i class="fa fa-user input-icon"></i>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="family-name">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email <span class="required-star">*</span></label>
+              <div class="input-group">
+                <i class="fa fa-envelope input-icon"></i>
+                <input type="email" id="email" name="email" placeholder="votre@email.com" required autocomplete="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone / WhatsApp</label>
+              <div class="input-group">
+                <i class="fa fa-phone input-icon"></i>
+                <input type="tel" id="telephone" name="telephone" placeholder="+212 6xx xxx xxx" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="destination">Destination <span class="required-star">*</span></label>
+              <div class="input-group">
+                <i class="fa fa-map input-icon"></i>
+                <select id="destination" name="destination" required>
+                  <option value="">— Choisissez —</option>
+                  <option value="marrakech">Marrakech</option>
+                  <option value="fes">Fès &amp; Meknès</option>
+                  <option value="sahara">Sahara – Merzouga</option>
+                  <option value="chefchaouen">Chefchaouen</option>
+                  <option value="essaouira">Essaouira</option>
+                  <option value="atlas">Haut Atlas – Toubkal</option>
+                  <option value="circuit">Circuit complet sur mesure</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget approximatif</label>
+              <div class="input-group">
+                <i class="fa fa-coins input-icon"></i>
+                <select id="budget" name="budget">
+                  <option value="">— Fourchette —</option>
+                  <option value="500-1500">500 – 1 500 DH / pers</option>
+                  <option value="1500-3000">1 500 – 3 000 DH / pers</option>
+                  <option value="3000-6000">3 000 – 6 000 DH / pers</option>
+                  <option value="6000+">Plus de 6 000 DH / pers</option>
+                  <option value="sur_mesure">Sur mesure – à discuter</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date_depart">Date de départ souhaitée</label>
+              <input type="date" id="date_depart" name="date_depart">
+            </div>
+            <div class="form-group">
+              <label for="duree">Durée du séjour</label>
+              <div class="input-group">
+                <i class="fa fa-calendar input-icon"></i>
+                <select id="duree" name="duree">
+                  <option value="">— Nombre de jours —</option>
+                  <option value="2-3">2 à 3 jours</option>
+                  <option value="4-5">4 à 5 jours</option>
+                  <option value="6-8">6 à 8 jours</option>
+                  <option value="9-14">9 à 14 jours</option>
+                  <option value="15+">Plus de 15 jours</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="voyageurs">Nombre de voyageurs <span class="required-star">*</span></label>
+              <div class="input-group">
+                <i class="fa fa-users input-icon"></i>
+                <input type="number" id="voyageurs" name="voyageurs" min="1" max="50" placeholder="Ex. 2" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="type_voyage">Type de voyage</label>
+              <div class="input-group">
+                <i class="fa fa-suitcase input-icon"></i>
+                <select id="type_voyage" name="type_voyage">
+                  <option value="">— Choisissez —</option>
+                  <option value="couple">En couple</option>
+                  <option value="famille">En famille</option>
+                  <option value="amis">Entre amis</option>
+                  <option value="solo">Voyage solo</option>
+                  <option value="groupe">Groupe organisé</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span class="required-star">*</span></label>
+            <div class="textarea-group">
+              <i class="fa fa-comment input-icon"></i>
+              <textarea id="message" name="message" placeholder="Décrivez vos envies : destinations, activités, hébergement préféré, besoins spéciaux..." required rows="5"></textarea>
+            </div>
+          </div>
+
+          <!-- Options supplémentaires -->
+          <div class="form-group">
+            <label>Services souhaités</label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+              <label class="form-check"><input type="checkbox" name="services[]" value="guide"> Guide officiel bilingue</label>
+              <label class="form-check"><input type="checkbox" name="services[]" value="transport"> Transport (4×4 / bus)</label>
+              <label class="form-check"><input type="checkbox" name="services[]" value="hotel"> Hébergement inclus</label>
+              <label class="form-check"><input type="checkbox" name="services[]" value="repas"> Repas traditionnels</label>
+              <label class="form-check"><input type="checkbox" name="services[]" value="activites"> Activités & excursions</label>
+              <label class="form-check"><input type="checkbox" name="services[]" value="assurance"> Assurance voyage</label>
+            </div>
+          </div>
+
+          <!-- Comment avez-vous entendu parler de nous -->
+          <div class="form-group">
+            <label for="source">Comment avez-vous connu Bladi Voyage ?</label>
+            <div class="input-group">
+              <i class="fa fa-search input-icon"></i>
+              <select id="source" name="source">
+                <option value="">— Sélectionner —</option>
+                <option value="google">Google / moteur de recherche</option>
+                <option value="instagram">Instagram</option>
+                <option value="facebook">Facebook</option>
+                <option value="tripadvisor">TripAdvisor</option>
+                <option value="ami">Recommandation d'un ami</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-check">
+              <input type="checkbox" name="newsletter" value="oui">
+              Je souhaite recevoir les offres et inspirations de Bladi Voyage (pas de spam)
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="form-check" style="align-items:flex-start;">
+              <input type="checkbox" name="cgu" required>
+              <span>J'accepte les <a href="#" style="color:var(--clay);font-weight:700;">Conditions Générales</a> et la <a href="#" style="color:var(--clay);font-weight:700;">Politique de Confidentialité</a> de Bladi Voyage. <span class="required-star">*</span></span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:1rem;">
+            <i class="fa fa-paper-plane" style="margin-right:10px;"></i>Envoyer ma demande
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="section" style="padding-top:0;">
+  <div class="wrapper">
+    <div class="section-header text-center">
+      <span class="section-tag">✦ Nous situer ✦</span>
+      <h2>Notre agence à Casablanca</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="map-section">
+      <iframe
+        title="Localisation Bladi Voyage, Casablanca"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8!2d-7.6192!3d33.5731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d282f0000001%3A0x1!2sCasablanca%2C+Maroc!5e0!3m2!1sfr!2sma!4v1700000000000"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="wrapper">
+    <div class="section-header text-center">
+      <span class="section-tag">✦ Questions fréquentes ✦</span>
+      <h2>FAQ</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Quel est le meilleur moment pour visiter le Maroc ?</summary>
+        <p>Le printemps (mars–mai) et l'automne (septembre–novembre) sont les meilleures saisons : températures douces partout. L'été est idéal pour les côtes et les montagnes. L'hiver est parfait pour le Sud et le désert.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Faut-il un visa pour entrer au Maroc ?</summary>
+        <p>Les ressortissants de l'UE, des USA, du Canada et de nombreux pays arabes n'ont pas besoin de visa pour des séjours touristiques de moins de 90 jours. Nous vérifions votre situation et vous informons lors de la demande de devis.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Les circuits sont-ils adaptés aux familles avec enfants ?</summary>
+        <p>Absolument. Nous proposons des itinéraires family-friendly avec rythme adapté, hébergements sécurisés et activités pour tous les âges (balade en dromadaire, cours de cuisine, visite d'artisans, etc.).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Comment se passe le paiement ? Un acompte est-il demandé ?</summary>
+        <p>Nous demandons un acompte de 30% à la réservation pour confirmer votre circuit. Le solde est réglé 15 jours avant le départ. Nous acceptons virement bancaire, PayPal et Payoneer.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Proposez-vous une assurance voyage ?</summary>
+        <p>Oui, elle est incluse dans nos formules Standard et Premium. Pour la formule Économique, nous pouvons vous orienter vers nos partenaires assureurs. Nous recommandons fortement une couverture annulation + rapatriement.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrapper">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"> Voyage Bladi<span class="dot">.</span></div>
+        <p>Votre agence de voyage marocaine depuis 2012.</p>
+        <div class="badges"><span class="badge">✓ Agréé Tourisme</span><span class="badge">✓ IATA</span></div>
+      </div>
+      <div class="footer-col">
+        <h5>Plan du site</h5>
+        <ul>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="services.html">Nos services</a></li>
+          <li><a href="gallery.html">Galerie photos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Mentions légales</h5>
+        <ul>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">CGV</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Agréments &amp; licences</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact rapide</h5>
+        <p style="color:rgba(255,255,255,.45);font-size:.88rem;">Casablanca, Maroc</p>
+        <p style="color:var(--saffron);font-weight:700;margin-top:8px;">+212 522 12 34 56</p>
+        <p style="color:rgba(255,255,255,.45);font-size:.85rem;margin-top:4px;">info@bladivoyage.ma</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Bladi Voyage. Tous droits réservés. — Casablanca, Maroc</span>
+      <div><a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">CGV</a></div>
+    </div>
+  </div>
+</footer>
+<div class="zellige-border"></div>
+
+<script src="../js/nav.js"></script>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Simulate form submission
+  document.getElementById('successMsg').classList.add('show');
+  this.reset();
+  this.scrollIntoView({ behavior:'smooth', block:'start' });
+});
+</script>
+</body>
+</html>

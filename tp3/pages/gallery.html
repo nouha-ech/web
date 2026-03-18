@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie –  Voyage Bladi</title>
+  <meta name="description" content="Galerie photo Bladi Voyage : désert du Sahara, médinas, Atlas, côtes atlantiques et artisanat marocain.">
+  <meta property="og:title" content="Galerie Photos – Bladi Voyage">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .gallery-filters {
+      display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+      margin-bottom:40px;
+    }
+    .filter-btn {
+      padding: 8px 22px;
+      border: 2px solid var(--sand);
+      border-radius: 24px;
+      background: transparent;
+      color: var(--text-dark);
+      font-family:'Lato',sans-serif; font-weight:700; font-size:.85rem;
+      letter-spacing:.8px; text-transform:uppercase;
+      cursor:pointer; transition: all .25s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--clay); border-color:var(--clay); color:var(--white);
+    }
+    /* Lightbox */
+    .lightbox {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background: rgba(0,0,0,.92);
+      align-items:center; justify-content:center;
+    }
+    .lightbox.open { display:flex; }
+    .lightbox img {
+      max-width:90vw; max-height:85vh;
+      border-radius:8px; box-shadow: 0 0 60px rgba(0,0,0,.8);
+      object-fit:contain;
+    }
+    .lightbox-close {
+      position:fixed; top:24px; right:28px;
+      color:var(--white); font-size:2rem; cursor:pointer;
+      background:none; border:none; z-index:10000;
+    }
+    .lightbox-caption {
+      position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+      color:var(--sand); font-size:.9rem; text-align:center;
+      background: rgba(0,0,0,.6); padding: 8px 20px; border-radius:6px;
+    }
+    .gallery-item { cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<div class="zellige-border"></div>
+
+<nav class="navbar">
+  <div class="wrapper">
+    <a href="../index.html" class="navbar-brand">🌙 Bladi Voyage<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="../index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html" class="active">Galerie</a>
+      <a href="contact.html" class="btn-nav">Contact</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="mobile-menu">
+    <a href="../index.html">🏠 Accueil</a>
+    <a href="about.html">👥 À propos</a>
+    <a href="services.html">⭐ Services</a>
+    <a href="gallery.html">🖼 Galerie</a>
+    <a href="contact.html">📞 Contact</a>
+  </div>
+</nav>
+
+<div class="page-heading">
+  <div class="wrapper">
+    <span class="section-tag" style="color:var(--sand);">✦ Inspirations ✦</span>
+    <h1>Galerie du Maroc</h1>
+    <p>Laissez-vous séduire par les paysages, les couleurs et les visages du Royaume</p>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="../index.html">Accueil</a>
+      <span>›</span>
+      <span style="color:var(--sand);">Galerie</span>
+    </nav>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrapper">
+    <div class="gallery-filters" role="group" aria-label="Filtres galerie">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="desert">Désert</button>
+      <button class="filter-btn" data-filter="villes">Villes</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="culture">Culture</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+
+      <div class="gallery-item wide" data-category="desert" data-caption="Dunes de Merzouga au coucher du soleil">
+        <picture>
+          <source media="(max-width:480px)"
+            srcset="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=480&q=70 1x,
+                    https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=960&q=70 2x">
+          <source media="(max-width:900px)"
+            srcset="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=900&q=75 1x">
+          <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80"
+               srcset="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=75 600w,
+                       https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80 1200w"
+               sizes="(max-width:600px) 100vw, 50vw"
+               alt="Dunes de Merzouga au coucher du soleil, Sahara marocain" loading="lazy">
+        </picture>
+        <div class="overlay"><i class="fa fa-expand"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="villes" data-caption="Médina de Marrakech, souks colorés">
+        <picture>
+          <source media="(max-width:480px)"
+            srcset="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=400&q=70 1x">
+          <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=700&q=80"
+               srcset="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=400&q=70 400w,
+                       https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=700&q=80 700w"
+               sizes="(max-width:600px) 100vw, 25vw"
+               alt="Souks de la médina de Marrakech" loading="lazy">
+        </picture>
+        <div class="overlay"><i class="fa fa-expand"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="villes" data-caption="Chefchaouen, la Perle Bleue du Rif">
+        <picture>
+          <img src="https://images.unsplash.com/photo-1568913664838-3b0ffc8e1a40?w=700&q=80"
+               srcset="https://images.unsplash.com/photo-1568913664838-3b0ffc8e1a40?w=400&q=70 400w,
+                       images/chef.jpg"
+               sizes="(max-width:600px) 100vw, 25vw"
+               alt="Rues bleues de Chefchaouen" loading="lazy">
+        </picture>
+        <div class="overlay"><i class="fa fa-expand"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="nature" data-caption="Gorges du Dadès, paysage grandiose">
+        <picture>
+          <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=700&q=80"
+               srcset="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400&q=70 400w,
+                       https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=700&q=80 700w"
+               sizes="(max-width:600px) 100vw, 25vw"
+               alt="Gorges du Dadès dans le Haut Atlas" loading="lazy">
+        </picture>
+        <div class="overlay"><i class="fa fa-expand"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="villes" data-caption="Fès el-Bali, médina millénaire">
+        <picture>
+          <img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=700&q=80"
+               srcset="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=400&q=70 400w,
+                       https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=700&q=80 700w"
+               sizes="(max-width:600px) 100vw, 25vw"
+               alt="Médina de Fès patrimoine UNESCO" loading="lazy">
+        </picture>
+        <div class="overlay"><i class="fa fa-expand"></i></div>
+      </div>
+
+      <div class="gallery-item wide" data-category="nature" data-caption="Vallée du Draa, palmiers à l'infini">
+        <picture>
+          <source media="(max-width:480px)"
+            srcset="images/chef.jpg">
+          <img src="https://images.unsplash.com/photo-1570610133337-09f6a5d7e0d0?w=1200&q=80"
+               srcset="https://images.unsplash.com/photo-1570610133337-09f6a5d7e0d0?w=600&q=75 600w,
+                       https://images.unsplash.com/photo-1570610133337-09f6a5d7e0d0?w=1200&q=80 1200w"
+               sizes="(max-width:600px) 100vw, 50vw"
+               alt="Essaouira et les remparts côtiers" loading="lazy">
+        </picture>
+        <div class="overlay"><i class="fa fa-expand"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="culture" data-caption="Artisanat zellige de Fès">
+        <picture>
+          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700&q=80"
+               srcset="https://images.unsplash.com/photo-1548013146-72479768bada?w=400&q=70 400w,
+                       https://images.unsplash.com/photo-1548013146-72479768bada?w=700&q=80 700w"
+               sizes="(max-width:600px) 100vw, 25vw"
+               alt="Mosaïque zellige artisanat marocain" loading="lazy">
+        </picture>
+        <div class="overlay"><i class="fa fa-expand"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="desert" data-caption="Nuit au bivouac sous les étoiles du Sahara">
+        <picture>
+          <img src="https://images.unsplash.com/photo-1535957998253-26ae1ef29506?w=700&q=80"
+               srcset="https://images.unsplash.com/photo-1535957998253-26ae1ef29506?w=400&q=70 400w,
+                       https://images.unsplash.com/photo-1535957998253-26ae1ef29506?w=700&q=80 700w"
+               sizes="(max-width:600px) 100vw, 25vw"
+               alt="Camp nomade sous les étoiles dans le désert" loading="lazy">
+        </picture>
+        <div class="overlay"><i class="fa fa-expand"></i></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualisation photo">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrapper">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">  Voyage Bladi<span class="dot">.</span></div>
+        <p>Votre agence de voyage marocaine depuis 2012.</p>
+        <div class="badges"><span class="badge">✓ Agréé Tourisme</span><span class="badge">✓ IATA</span></div>
+      </div>
+      <div class="footer-col">
+        <h5>Plan du site</h5>
+        <ul>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="services.html">Nos services</a></li>
+          <li><a href="gallery.html">Galerie photos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Destinations</h5>
+        <ul>
+          <li><a href="services.html">Marrakech</a></li>
+          <li><a href="services.html">Fès &amp; Meknès</a></li>
+          <li><a href="services.html">Sahara Merzouga</a></li>
+          <li><a href="services.html">Chefchaouen</a></li>
+          <li><a href="services.html">Essaouira</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Newsletter</h5>
+        <p style="color:rgba(255,255,255,.45);font-size:.88rem;">Nos meilleures offres dans votre boîte.</p>
+        <div class="newsletter-form" style="margin-top:14px;">
+          <input type="email" placeholder="votre@email.com">
+          <button type="button"><i class="fa fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Bladi Voyage. Tous droits réservés.</span>
+      <div><a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">CGV</a></div>
+    </div>
+  </div>
+</footer>
+<div class="zellige-border"></div>
+
+<script src="../js/nav.js"></script>
+<script>
+// Gallery filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    galleryItems.forEach(item => {
+      if (filter === 'all' || item.dataset.category === filter) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxClose = document.getElementById('lightboxClose');
+
+galleryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = item.dataset.caption || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+</body>
+</html>
