@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+    <style>
+        body {
+            line-height: 1.6;
+            background-color: #F2F5F0;
+            color: #2C3E30;
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(44, 62, 48, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #556B2F;
+            border-bottom: 2px solid #8FBC8F;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #6B8E23;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #2C3E30;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #E8F0E8;
+            color: #2C3E30;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            border: 1px solid #8FBC8F;
+        }
+
+        code {
+            font-family: monospace;
+        }
+
+        ul.reponses {
+            background-color: #F9FBF9;
+            padding: 20px 40px;
+            border-radius: 5px;
+            list-style-type: none;
+            border: 1px solid #8FBC8F;
+        }
+
+        ul.reponses li {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #556B2F;
+        }
+
+        .answer-text {
+            background-color: #F0F7F0;
+            border-left: 4px solid #8FBC8F;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Exercice 2</h1>
+
+        <h2>2.1 Comprendre le Box Model</h2>
+
+        <h3>1. Avec box-sizing: content-box (défaut), quelle est la largeur totale visible ?</h3>
+        <div class="answer-text">
+            <strong>350px</strong>
+            <br>
+            Calcul : width (300) + padding-left (20) + padding-right (20) + border-left (5) + border-right (5) = 350px.
+        </div>
+
+        <h3>2. Avec box-sizing: border-box, quelle est la largeur totale visible ?</h3>
+        <div class="answer-text">
+            <strong>300px</strong>
+            <br>
+            Avec border-box, le padding et la border sont inclus dans la largeur définie.
+        </div>
+
+        <h3>3. Écrivez le reset CSS universel pour box-sizing</h3>
+        <pre><code>*, *::before, *::after {
+    box-sizing: border-box;
+}</code></pre>
+
+
+        <h2>2.2 Centrer un élément</h2>
+
+        <h3>Centrez horizontalement et verticalement une div de 600px</h3>
+        <div class="answer-text">
+            <strong>HTML :</strong>
+            <pre><code>&lt;body&gt;
+    &lt;div class="centered-box"&gt;Contenu&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+            <strong>CSS :</strong>
+            <pre><code>body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.centered-box {
+    width: 600px;
+}</code></pre>
+        </div>
+
+    </div>
+
+</body>
+</html>
