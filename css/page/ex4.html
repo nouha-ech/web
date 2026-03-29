@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 : CSS Grid</title>
+
+<style>
+body {
+    line-height: 1.6;
+    background-color: #F2F5F0;
+    color: #2C3E30;
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(44, 62, 48, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #556B2F;
+    border-bottom: 2px solid #8FBC8F;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #6B8E23;
+    margin-top: 40px;
+}
+
+.editor-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.code-panel {
+    background-color: #2C3E30;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.panel-header {
+    background-color: #1A2520;
+    color: #8FBC8F;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.code-content {
+    padding: 20px;
+}
+
+.code-content pre {
+    margin: 0;
+    color: #E8F0E8;
+}
+
+.preview-panel {
+    background-color: #F0F7F0;
+    border-radius: 8px;
+    border: 2px solid #8FBC8F;
+}
+
+.preview-content {
+    padding: 20px;
+}
+
+/* 4.1  */
+.grid-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.card-preview {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #8FBC8F;
+}
+
+/* 4.2  */
+.layout-preview {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    gap: 10px;
+}
+
+.header-preview { grid-area: header; background: #8FBC8F; padding: 15px; }
+.sidebar-preview { grid-area: sidebar; background: #A9CBA4; padding: 15px; }
+.main-preview { grid-area: main; background: #DDEEDB; padding: 15px; }
+.footer-preview { grid-area: footer; background: #8FBC8F; padding: 15px; }
+
+@media(max-width:768px){
+    .editor-container {
+        grid-template-columns: 1fr;
+    }
+
+    .layout-preview {
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Exercice 4 : CSS Grid</h1>
+
+<!-- 4.1 -->
+<h2>4.1 Grille de cartes responsive</h2>
+
+<div class="editor-container">
+
+<div class="code-panel">
+<div class="panel-header">CODE CSS</div>
+<div class="code-content">
+<pre><code>.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  text-align: center;
+}</code></pre>
+</div>
+</div>
+
+<div class="preview-panel">
+<div class="panel-header">APERÇU</div>
+<div class="preview-content">
+<div class="grid-preview">
+<div class="card-preview">Carte 1</div>
+<div class="card-preview">Carte 2</div>
+<div class="card-preview">Carte 3</div>
+<div class="card-preview">Carte 4</div>
+<div class="card-preview">Carte 5</div>
+<div class="card-preview">Carte 6</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 4.2 -->
+<h2>4.2 Layout complet avec Grid Areas</h2>
+
+<div class="editor-container">
+
+<div class="code-panel">
+<div class="panel-header">CODE CSS</div>
+<div class="code-content">
+<pre><code>.page-layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  gap: 10px;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></pre>
+</div>
+</div>
+
+<div class="preview-panel">
+<div class="panel-header">APERÇU</div>
+<div class="preview-content">
+<div class="layout-preview">
+<div class="header-preview">Header</div>
+<div class="sidebar-preview">Sidebar</div>
+<div class="main-preview">Contenu principal</div>
+<div class="footer-preview">Footer</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
