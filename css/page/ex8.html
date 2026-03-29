@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 8 - Quiz</title>
+    <style>
+        body {
+            line-height: 1.6;
+            background-color: #F2F5F0;
+            color: #2C3E30;
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(44, 62, 48, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #556B2F;
+            border-bottom: 2px solid #8FBC8F;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #6B8E23;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        ul.reponses {
+            background-color: #F9FBF9;
+            padding: 20px 40px;
+            border-radius: 5px;
+            list-style-type: none;
+            border: 1px solid #8FBC8F;
+        }
+
+        ul.reponses li {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #556B2F;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Exercice 8 - Quiz de révision</h1>
+
+        <h2>1. Quel sélecteur a la spécificité la plus haute ?</h2>
+        <ul class="reponses" aria-label="Réponses pour la question 1 : Quel sélecteur a la spécificité la plus haute ?">
+            <li><input type="checkbox"> a) .header .nav a</li>
+            <li><input type="checkbox" checked> b) #header a</li>
+            <li><input type="checkbox"> c) header nav a</li>
+            <li><input type="checkbox"> d) a.active</li>
+        </ul>
+
+        <h2>2. Avec box-sizing: border-box, un élément avec width: 200px et padding: 20px a une largeur totale de :</h2>
+        <ul class="reponses" >
+            <li><input type="checkbox"> a) 240px</li>
+            <li><input type="checkbox" checked> b) 200px</li>
+            <li><input type="checkbox"> c) 220px</li>
+            <li><input type="checkbox"> d) 160px</li>
+        </ul>
+
+        <h2>3. Pour centrer un élément verticalement et horizontalement avec Flexbox :</h2>
+        <ul class="reponses">
+            <li><input type="checkbox"> a) justify-content: center</li>
+            <li><input type="checkbox"> b) align-items: center</li>
+            <li><input type="checkbox" checked> c) justify-content: center ET align-items: center</li>
+            <li><input type="checkbox"> d) text-align: center</li>
+        </ul>
+
+        <h2>4. La valeur 1fr en CSS Grid signifie :</h2>
+        <ul class="reponses">
+            <li><input type="checkbox"> a) 1 pixel</li>
+            <li><input type="checkbox" checked> b) 1 fraction de l'espace disponible</li>
+            <li><input type="checkbox"> c) 1 pourcentage</li>
+            <li><input type="checkbox"> d) 1 rem</li>
+        </ul>
+
+        <h2>5. L'approche "Mobile First" utilise :</h2>
+        <ul class="reponses">
+            <li><input type="checkbox"> a) max-width dans les media queries</li>
+            <li><input type="checkbox" checked> b) min-width dans les media queries</li>
+            <li><input type="checkbox"> c) device-width</li>
+            <li><input type="checkbox"> d) orientation</li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
