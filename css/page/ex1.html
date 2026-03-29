@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réponses EX1 CSS</title>
+    <style>
+        body {
+            line-height: 1.6;
+            background-color: #F2F5F0;
+            color: #2C3E30;
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(44, 62, 48, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #556B2F;
+            border-bottom: 2px solid #8FBC8F;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #7c8d5b;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #2C3E30;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #E8F0E8;
+            color: #2C3E30;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            border: 1px solid #8FBC8F;
+        }
+
+        code {
+            font-family: monospace;
+        }
+
+        ul.reponses {
+            background-color: #F9FBF9;
+            padding: 20px 40px;
+            border-radius: 5px;
+            list-style-type: none;
+            border: 1px solid #8FBC8F;
+        }
+
+        ul.reponses li {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #556B2F;
+        }
+
+        .answer-text {
+            background-color: #F0F7F0;
+            border-left: 4px solid #8FBC8F;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Correction TP CSS</h1>
+
+        <h2>1. Sélecteurs CSS</h2>
+
+        <h3>1. Sélectionnez tous les liens dans la navigation</h3>
+        <pre><code>.main-nav a {
+}</code></pre>
+
+        <h3>2. Sélectionnez uniquement le lien actif</h3>
+        <pre><code>.main-nav a.active {
+}</code></pre>
+
+        <h3>3. Sélectionnez l'article qui a la classe featured</h3>
+        <pre><code>article.featured {
+}</code></pre>
+
+        <h3>4. Sélectionnez le premier paragraphe de chaque article</h3>
+        <pre><code>article p:first-of-type {
+}</code></pre>
+
+        <h3>5. Sélectionnez les éléments &lt;li&gt; pairs</h3>
+        <pre><code>li:nth-child(even) {
+}</code></pre>
+
+
+        <h2>1.2 Spécificité</h2>
+
+        <h3>1. Classez ces sélecteurs par spécificité croissante</h3>
+        <div class="answer-text">
+            <strong>Ordre (du plus faible au plus fort) :</strong>
+            <ul class="reponses">
+                <li>1. p</li>
+                <li>2. .text</li>
+                <li>3. p.text</li>
+                <li>4. #main</li>
+                <li>5. #main .text p</li>
+            </ul>
+        </div>
+
+        <h3>2. Si deux règles ont la même spécificité, laquelle gagne ?</h3>
+        <div class="answer-text">
+            C'est la règle qui est écrite <strong>en dernier</strong> dans le fichier CSS (la plus bas dans le code) qui l'emporte.
+        </div>
+
+        <h3>3. Pourquoi faut-il éviter !important ?</h3>
+        <div class="answer-text">
+            Il faut l'éviter car cela rend le débogage très difficile et casse la cascade naturelle du CSS
+        </div>
+
+    </div>
+
+</body>
+
+</html>
