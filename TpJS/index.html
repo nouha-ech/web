@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Javascript </title>
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Main Container */
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border-color: black;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #944852; 
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+       
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px;
+        }
+
+        
+        .btn {
+            display: block;
+            background-color: #aa5971;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        
+        .btn:hover {
+            background-color: #a75966; 
+            transform: translateY(-2px);
+        }
+
+        
+        @media (max-width: 400px) {
+            .button-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>TP CSS </h1>
+        
+        <div class="button-grid">
+            <a href="pages/ex1.html"  class="btn">Exercice 1</a>
+            <a href="pages/ex2.html" class="btn">Exercice 2</a>
+            <a href="pages/ex3.html" class="btn">Exercice 3</a>
+            <a href="pages/ex4.html" class="btn">Exercice 4</a>
+            <a href="pages/ex5.html" class="btn">Exercice 5</a>
+            <a href="pages/ex6.html" class="btn">Exercice 6</a>
+            <a href="pages/ex7.html" class="btn">Exercice 7</a>
+            <a href="pages/ex8.html" class="btn">Exercice 8</a>
+            <a href="pages/ex9.html" class="btn">Exercice 9</a>
+            <a href="pages/ex10.html" class="btn">Exercice 10</a>
+        </div>
+    </div>
+
+    
+
+</body>
+
+
+</html>
