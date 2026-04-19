@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 10 - Onglets interactifs</title>
+<style>
+:root {
+    --bg-primary: #FDF6F7; --bg-secondary: #FFF0F1; --bg-code: #4A3A3F;
+    --text-primary: #5C4B4F; --text-secondary: #3E3A3B;
+    --accent-primary: #C9A9A6; --accent-secondary: #B89B9A;
+    --accent-dark: #8B7373; --border: #E8D5D7; --code-text: #F5E6E8;
+}
+body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: var(--bg-primary); color: var(--text-primary); }
+.container { max-width: 1200px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(92,75,79,0.1); }
+h1 { text-align: center; color: var(--accent-dark); border-bottom: 3px solid var(--accent-primary); padding-bottom: 15px; }
+.editor { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 25px; }
+@media(max-width:900px){ .editor { grid-template-columns: 1fr; } }
+.panel { border-radius: 10px; overflow: hidden; border: 2px solid var(--border); }
+.panel-header { background: var(--accent-secondary); color: white; padding: 12px 20px; font-weight: 600; }
+.code-panel { background: var(--bg-code); }
+.code-panel pre { margin: 0; padding: 20px; color: var(--code-text); font-size: 14px; overflow-x: auto; }
+.code-panel code { font-family: 'Consolas', monospace; }
+.preview-panel { background: var(--bg-secondary); }
+.preview-content { padding: 25px; }
+.zone-travail { border: 2px dashed var(--accent-primary); padding: 20px; background: white; border-radius: 8px; margin: 15px 0; }
+.onglet { background: var(--bg-secondary); border: none; padding: 12px 24px; margin-right: 5px; border-radius: 8px 8px 0 0; cursor: pointer; transition: all 0.3s; font-weight: 500; }
+.onglet:hover { background: var(--accent-primary); color: white; }
+.onglet.actif { background: var(--accent-primary); color: white; border-bottom: 3px solid white; }
+.contenu-onglet { padding: 20px; border: 2px solid var(--border); border-radius: 0 8px 8px 8px; background: white; margin-top: -2px; }
+.contenu-onglet.cache { display: none; }
+.contenu-onglet.visible { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.contenu-onglet h4 { color: var(--accent-dark); margin-top: 0; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1> Exercice 10 : Système d'onglets interactifs</h1>
+<p style="text-align:center"><em>Objectif : Créer un système d'onglets avec affichage/masquage dynamique</em></p>
+
+<div class="editor">
+<div class="panel code-panel">
+<div class="panel-header"> CODE</div>
+<pre><code>function afficherOnglet(numero) {
+    document.querySelectorAll(".contenu-onglet").forEach(content => {
+        content.classList.remove("visible");
+        content.classList.add("cache");
+    });
+    const contenuSelect = document.querySelector("#contenu" + numero);
+    contenuSelect.classList.remove("cache");
+    contenuSelect.classList.add("visible");
+    document.querySelectorAll(".onglet").forEach(btn => 
+        btn.classList.remove("actif"));
+    event.currentTarget.classList.add("actif");
+}</code></pre>
+</div>
+
+<div class="panel preview-panel">
+<div class="panel-header"> APERÇU </div>
+<div class="preview-content">
+<div class="zone-travail">
+<button onclick="afficherOnglet(1)" class="onglet actif"> Onglet 1</button>
+<button onclick="afficherOnglet(2)" class="onglet">Onglet 2</button>
+<button onclick="afficherOnglet(3)" class="onglet">Onglet 3</button>
+
+<div id="contenu1" class="contenu-onglet visible">
+<h4>hi</h4>
+<p>hellooo</p>
+</div>
+<div id="contenu2" class="contenu-onglet cache">
+<h4>C'est nohaila'</h4>
+<p>ww</p>
+</div>
+<div id="contenu3" class="contenu-onglet cache">
+<h4> enset</h4>
+<p>enset web dev 2026</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function afficherOnglet(numero) {
+    document.querySelectorAll(".contenu-onglet").forEach(content => {
+        content.classList.remove("visible");
+        content.classList.add("cache");
+    });
+    const contenuSelect = document.querySelector("#contenu" + numero);
+    contenuSelect.classList.remove("cache");
+    contenuSelect.classList.add("visible");
+    document.querySelectorAll(".onglet").forEach(btn => btn.classList.remove("actif"));
+    event.currentTarget.classList.add("actif");
+}
+</script>
+</body>
+</html>

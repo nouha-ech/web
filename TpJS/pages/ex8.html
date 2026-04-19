@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 8 - Liste TODO</title>
+<style>
+:root {
+    --bg-primary: #FDF6F7; --bg-secondary: #FFF0F1; --bg-code: #4A3A3F;
+    --text-primary: #5C4B4F; --text-secondary: #3E3A3B;
+    --accent-primary: #C9A9A6; --accent-secondary: #B89B9A;
+    --accent-dark: #8B7373; --border: #E8D5D7; --code-text: #F5E6E8;
+}
+body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: var(--bg-primary); color: var(--text-primary); }
+.container { max-width: 1200px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(92,75,79,0.1); }
+h1 { text-align: center; color: var(--accent-dark); border-bottom: 3px solid var(--accent-primary); padding-bottom: 15px; }
+.editor { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 25px; }
+@media(max-width:900px){ .editor { grid-template-columns: 1fr; } }
+.panel { border-radius: 10px; overflow: hidden; border: 2px solid var(--border); }
+.panel-header { background: var(--accent-secondary); color: white; padding: 12px 20px; font-weight: 600; }
+.code-panel { background: var(--bg-code); }
+.code-panel pre { margin: 0; padding: 20px; color: var(--code-text); font-size: 14px; overflow-x: auto; }
+.code-panel code { font-family: 'Consolas', monospace; }
+.preview-panel { background: var(--bg-secondary); }
+.preview-content { padding: 25px; }
+.zone-travail { border: 2px dashed var(--accent-primary); padding: 20px; background: white; border-radius: 8px; margin: 15px 0; }
+input { padding: 10px; margin-right: 10px; border: 2px solid var(--border); border-radius: 6px; width: 200px; max-width: 60%; }
+button { background: var(--accent-primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin: 5px 5px 5px 0; transition: all 0.3s; }
+button:hover { background: var(--accent-dark); transform: translateY(-2px); }
+button.danger { background: #ef9a9a; }
+ul { list-style: none; padding: 0; margin-top: 15px; }
+li { padding: 12px 15px; margin: 8px 0; background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+li button { margin: 0; padding: 5px 12px; font-size: 12px; background: #ef9a9a; }
+li button:hover { background: #e57373; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>✅ Exercice 8 : Liste TODO simple</h1>
+<p style="text-align:center"><em>Objectif : Créer une liste de tâches avec ajout et suppression</em></p>
+
+<div class="editor">
+<div class="panel code-panel">
+<div class="panel-header"> CODE</div>
+<pre><code>function ajouterTache() {
+    const tache = document.querySelector("#tache").value.trim();
+    if (tache) {
+        const li = document.createElement("li");
+        li.innerHTML = tache + ' &lt;button onclick="supprimerTache(this)"&gt;✕&lt;/button&gt;';
+        document.querySelector("#listeTaches").appendChild(li);
+        document.querySelector("#tache").value = "";
+    }
+}
+function supprimerTache(bouton) {
+    bouton.parentElement.remove();
+}
+function effacerTout() {
+    document.querySelector("#listeTaches").innerHTML = "";
+}</code></pre>
+</div>
+
+<div class="panel preview-panel">
+<div class="panel-header">APERÇU</div>
+<div class="preview-content">
+<div class="zone-travail">
+<input type="text" id="tache" placeholder="Nouvelle tâche...">
+<button onclick="ajouterTache()">Ajouter</button>
+<button class="danger" onclick="effacerTout()"> Tout effacer</button>
+<ul id="listeTaches"></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function ajouterTache() {
+    const tache = document.querySelector("#tache").value.trim();
+    if (tache) {
+        const li = document.createElement("li");
+        li.innerHTML = tache + ' <button onclick="supprimerTache(this)">✕</button>';
+        document.querySelector("#listeTaches").appendChild(li);
+        document.querySelector("#tache").value = "";
+    }
+}
+function supprimerTache(bouton) {
+    bouton.parentElement.remove();
+}
+function effacerTout() {
+    document.querySelector("#listeTaches").innerHTML = "";
+}
+</script>
+</body>
+</html>
