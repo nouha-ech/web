@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exercice 3 - Ajouter du HTML</title>
+<title>Exercice 4 - Manipuler les classes CSS</title>
 <style>
 :root {
     --bg-primary: #FDF6F7; --bg-secondary: #FFF0F1; --bg-code: #4A3A3F;
@@ -23,40 +23,49 @@ h1 { text-align: center; color: var(--accent-dark); border-bottom: 3px solid var
 .code-panel code { font-family: 'Consolas', monospace; }
 .preview-panel { background: var(--bg-secondary); }
 .preview-content { padding: 25px; }
-.zone-travail { border: 2px dashed var(--accent-primary); padding: 20px; background: white; border-radius: 8px; margin: 15px 0; min-height: 150px; }
+.zone-travail { border: 2px dashed var(--accent-primary); padding: 20px; background: white; border-radius: 8px; margin: 15px 0; }
 button { background: var(--accent-primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin: 5px 5px 5px 0; transition: all 0.3s; }
 button:hover { background: var(--accent-dark); transform: translateY(-2px); }
-button.danger { background: #ef9a9a; }
-#conteneur3 h4 { color: var(--accent-dark); margin: 10px 0 5px; }
-#conteneur3 p { margin: 5px 0; color: var(--text-secondary); }
+button.toggle { background: var(--accent-secondary); }
+/* Classes CSS pour l'exercice */
+.rouge { color: red !important; }
+.grand-texte { font-size: 24px !important; }
+.bordure { border: 3px solid var(--accent-dark) !important; padding: 10px; border-radius: 5px; }
+#paragraphe4 { transition: all 0.3s ease; padding: 10px; }
 </style>
 </head>
 <body>
 <div class="container">
-<h1> Exercice 3 : Ajouter du HTML avec innerHTML</h1>
-<p style="text-align:center"><em>Objectif : Ajouter et effacer du contenu HTML dynamiquement</em></p>
+<h1> Exercice 4 : Manipuler les classes CSS avec classList</h1>
+<p style="text-align:center"><em>Objectif : Ajouter, enlever et basculer des classes CSS</em></p>
 
 <div class="editor">
 <div class="panel code-panel">
-<div class="panel-header"> CODE JAVASCRIPT</div>
-<pre><code>function ajouterContenu() {
-   
-    document.querySelector("#conteneur3").innerHTML += 
-        "&lt;h4&gt;Nouveau titre&lt;/h4&gt;&lt;p&gt;Nouveau paragraphe&lt;/p&gt;";
+<div class="panel-header">CODE</div>
+<pre><code>function ajouterClasse() {
+    
+    document.querySelector("#paragraphe4")
+        .classList.add("rouge", "grand-texte");
 }
-function effacerContenu() {
-    // vider
-    document.querySelector("#conteneur3").innerHTML = "";
+function enleverClasse() {
+   
+    document.querySelector("#paragraphe4")
+        .classList.remove("rouge", "grand-texte");
+}
+function basculerClasse() {
+    
+    document.querySelector("#paragraphe4").classList.toggle("bordure");
 }</code></pre>
 </div>
 
 <div class="panel preview-panel">
-<div class="panel-header"> APERÇU </div>
+<div class="panel-header">APERÇU INTERACTIF</div>
 <div class="preview-content">
 <div class="zone-travail">
-<div id="conteneur3"></div>
-<button onclick="ajouterContenu()">Ajouter du contenu</button>
-<button class="danger" onclick="effacerContenu()"> Effacer</button>
+<p id="paragraphe4">bonjour</p>
+<button onclick="ajouterClasse()">Ajouter style</button>
+<button onclick="enleverClasse()">Enlever style</button>
+<button class="toggle" onclick="basculerClasse()">Basculer bordure</button>
 </div>
 </div>
 </div>
@@ -64,11 +73,14 @@ function effacerContenu() {
 </div>
 
 <script>
-function ajouterContenu() {
-    document.querySelector("#conteneur3").innerHTML += "<h4>Nouveau titre</h4><p>Nouveau paragraphe</p>";
+function ajouterClasse() {
+    document.querySelector("#paragraphe4").classList.add("rouge", "grand-texte");
 }
-function effacerContenu() {
-    document.querySelector("#conteneur3").innerHTML = "";
+function enleverClasse() {
+    document.querySelector("#paragraphe4").classList.remove("rouge", "grand-texte");
+}
+function basculerClasse() {
+    document.querySelector("#paragraphe4").classList.toggle("bordure");
 }
 </script>
 </body>

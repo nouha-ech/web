@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exercice 3 - Ajouter du HTML</title>
+<title>Exercice 5 - Modifier plusieurs éléments</title>
 <style>
 :root {
     --bg-primary: #FDF6F7; --bg-secondary: #FFF0F1; --bg-code: #4A3A3F;
@@ -23,30 +23,33 @@ h1 { text-align: center; color: var(--accent-dark); border-bottom: 3px solid var
 .code-panel code { font-family: 'Consolas', monospace; }
 .preview-panel { background: var(--bg-secondary); }
 .preview-content { padding: 25px; }
-.zone-travail { border: 2px dashed var(--accent-primary); padding: 20px; background: white; border-radius: 8px; margin: 15px 0; min-height: 150px; }
+.zone-travail { border: 2px dashed var(--accent-primary); padding: 20px; background: white; border-radius: 8px; margin: 15px 0; }
+.item { padding: 12px; margin: 8px 0; background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); border-radius: 4px; transition: all 0.3s; }
+.fond-jaune { background-color: #fff9c4 !important; }
 button { background: var(--accent-primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin: 5px 5px 5px 0; transition: all 0.3s; }
 button:hover { background: var(--accent-dark); transform: translateY(-2px); }
-button.danger { background: #ef9a9a; }
-#conteneur3 h4 { color: var(--accent-dark); margin: 10px 0 5px; }
-#conteneur3 p { margin: 5px 0; color: var(--text-secondary); }
 </style>
 </head>
 <body>
 <div class="container">
-<h1> Exercice 3 : Ajouter du HTML avec innerHTML</h1>
-<p style="text-align:center"><em>Objectif : Ajouter et effacer du contenu HTML dynamiquement</em></p>
+<h1>Exercice 5 : Modifier plusieurs éléments</h1>
+<p style="text-align:center"><em>Objectif : Sélectionner et modifier tous les éléments d'une classe</em></p>
 
 <div class="editor">
 <div class="panel code-panel">
 <div class="panel-header"> CODE JAVASCRIPT</div>
-<pre><code>function ajouterContenu() {
-   
-    document.querySelector("#conteneur3").innerHTML += 
-        "&lt;h4&gt;Nouveau titre&lt;/h4&gt;&lt;p&gt;Nouveau paragraphe&lt;/p&gt;";
+<pre><code>function colorierTous() {
+    
+    document.querySelectorAll(".item").forEach(item => {
+        item.classList.add("fond-jaune");
+    });
 }
-function effacerContenu() {
-    // vider
-    document.querySelector("#conteneur3").innerHTML = "";
+function numeroteTous() {
+
+    document.querySelectorAll(".item").forEach((item, index) => {
+        const texteOriginal = item.innerText.replace(/^[0-9]+\.\s*/, '');
+        item.innerText = (index + 1) + ". " + texteOriginal;
+    });
 }</code></pre>
 </div>
 
@@ -54,9 +57,12 @@ function effacerContenu() {
 <div class="panel-header"> APERÇU </div>
 <div class="preview-content">
 <div class="zone-travail">
-<div id="conteneur3"></div>
-<button onclick="ajouterContenu()">Ajouter du contenu</button>
-<button class="danger" onclick="effacerContenu()"> Effacer</button>
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+<button onclick="colorierTous()">Colorier tous</button>
+<button onclick="numeroteTous()"> Numéroter</button>
 </div>
 </div>
 </div>
@@ -64,11 +70,16 @@ function effacerContenu() {
 </div>
 
 <script>
-function ajouterContenu() {
-    document.querySelector("#conteneur3").innerHTML += "<h4>Nouveau titre</h4><p>Nouveau paragraphe</p>";
+function colorierTous() {
+    document.querySelectorAll(".item").forEach(item => {
+        item.classList.add("fond-jaune");
+    });
 }
-function effacerContenu() {
-    document.querySelector("#conteneur3").innerHTML = "";
+function numeroteTous() {
+    document.querySelectorAll(".item").forEach((item, index) => {
+        const texteOriginal = item.innerText.replace(/^[0-9]+\.\s*/, '');
+        item.innerText = (index + 1) + ". " + texteOriginal;
+    });
 }
 </script>
 </body>

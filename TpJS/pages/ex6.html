@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 6 - Sélecteur de couleur</title>
+<style>
+:root {
+    --bg-primary: #FDF6F7; --bg-secondary: #FFF0F1; --bg-code: #4A3A3F;
+    --text-primary: #5C4B4F; --text-secondary: #3E3A3B;
+    --accent-primary: #C9A9A6; --accent-secondary: #B89B9A;
+    --accent-dark: #8B7373; --border: #E8D5D7; --code-text: #F5E6E8;
+}
+body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: var(--bg-primary); color: var(--text-primary); transition: background 0.4s ease; }
+.container { max-width: 1200px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(92,75,79,0.1); }
+h1 { text-align: center; color: var(--accent-dark); border-bottom: 3px solid var(--accent-primary); padding-bottom: 15px; }
+.editor { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 25px; }
+@media(max-width:900px){ .editor { grid-template-columns: 1fr; } }
+.panel { border-radius: 10px; overflow: hidden; border: 2px solid var(--border); }
+.panel-header { background: var(--accent-secondary); color: white; padding: 12px 20px; font-weight: 600; }
+.code-panel { background: var(--bg-code); }
+.code-panel pre { margin: 0; padding: 20px; color: var(--code-text); font-size: 14px; overflow-x: auto; }
+.code-panel code { font-family: 'Consolas', monospace; }
+.preview-panel { background: var(--bg-secondary); }
+.preview-content { padding: 25px; }
+.zone-travail { border: 2px dashed var(--accent-primary); padding: 20px; background: white; border-radius: 8px; margin: 15px 0; text-align: center; }
+.boite { width: 80px; height: 80px; margin: 10px; display: inline-block; border-radius: 10px; cursor: pointer; transition: all 0.3s; border: 3px solid transparent; }
+.boite:hover { transform: scale(1.1); }
+.boite.actif { border-color: var(--accent-dark); box-shadow: 0 0 15px rgba(139,115,115,0.5); }
+button { background: var(--accent-primary); color: white; border: none; padding: 10px 25px; border-radius: 6px; cursor: pointer; margin-top: 15px; transition: all 0.3s; }
+button:hover { background: var(--accent-dark); transform: translateY(-2px); }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Exercice 6 : Créer un sélecteur de couleur</h1>
+<p style="text-align:center"><em>Objectif : Changer la couleur de fond de la page avec des boîtes interactives</em></p>
+
+<div class="editor">
+<div class="panel code-panel">
+<div class="panel-header"> CODE JAVASCRIPT</div>
+<pre><code>function changerFond(couleur) {
+    
+    document.body.style.backgroundColor = couleur;
+   
+    document.querySelectorAll(".boite").forEach(box => 
+        box.classList.remove("actif"));
+   
+    event.currentTarget.classList.add("actif");
+}
+function reinitialiserFond() {
+    
+    document.body.style.backgroundColor = "var(--bg-primary)";
+    
+    document.querySelectorAll(".boite").forEach(box => 
+        box.classList.remove("actif"));
+}</code></pre>
+</div>
+
+<div class="panel preview-panel">
+<div class="panel-header"> APERÇU INTERACTIF</div>
+<div class="preview-content">
+<div class="zone-travail">
+<p style="margin-bottom:15px"><strong>Cliquez sur une couleur :</strong></p>
+<div class="boite" style="background-color: #943838;" onclick="changerFond('#e57373')" title="Rouge"></div>
+<div class="boite" style="background-color: #0f5512;" onclick="changerFond('#81c784')" title="Vert"></div>
+<div class="boite" style="background-color: #09375c;" onclick="changerFond('#64b5f6')" title="Bleu"></div>
+<div class="boite" style="background-color: #f7c00b;" onclick="changerFond('#ffd54f')" title="Jaune"></div>
+<br>
+<button onclick="reinitialiserFond()"> Réinitialiser</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function changerFond(couleur) {
+    document.body.style.backgroundColor = couleur;
+    document.querySelectorAll(".boite").forEach(box => box.classList.remove("actif"));
+    event.currentTarget.classList.add("actif");
+}
+function reinitialiserFond() {
+    document.body.style.backgroundColor = "var(--bg-primary)";
+    document.querySelectorAll(".boite").forEach(box => box.classList.remove("actif"));
+}
+</script>
+</body>
+</html>
