@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href=".\\style.css">
+  <title>HTTP </title>
+ 
+</head>
+<body>
+  <div class="container">
+
+     <h1>TP HTTP </h1>
+    <div class="row">
+      <select>
+        <option>GET</option>
+        <option>POST</option>
+        <option>PUT</option>
+        <option>PATCH</option>
+        <option>DELETE</option>
+      </select>
+      <input type="text" placeholder="URL">
+      <button>Envoyer</button>
+    </div>
+
+    
+    <div class="headers">
+      <input type="text" placeholder="Header key">
+      <input type="text" placeholder="Header value">
+      <button>+</button>
+    </div>
+
+    
+    <div class="textarea">
+      <label>Body</label>
+      <textarea></textarea>
+    </div>
+
+    
+    <div class="textarea">
+      <label>Response body</label>
+      <textarea readonly></textarea>
+    </div>
+  </div>
+</body>
+<script src="script.js" defer></script>
+</html>
